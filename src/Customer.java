@@ -1,14 +1,16 @@
-import java.lang.*;
+
 import java.util.*;
 
 class Customer {
 	private String name;
+	@SuppressWarnings("rawtypes")
 	private Vector _rentals = new Vector();
 
 	public Customer(String newname) {
 		name = newname;
 	};
 
+	@SuppressWarnings("unchecked")
 	public void addRental(Rental arg) {
 		_rentals.addElement(arg);
 	};
@@ -17,6 +19,7 @@ class Customer {
 		return name;
 	};
 
+	@SuppressWarnings("rawtypes")
 	public String statement() {
 		Enumeration rentals = _rentals.elements();
 		String result = "Rental Record for " + getName() + "\n";
@@ -34,6 +37,7 @@ class Customer {
 		return result;
 	}
 
+	@SuppressWarnings("rawtypes")
 	private double getTotalCharge() {
 		double result = 0;
 		Enumeration rentals = _rentals.elements();
@@ -44,6 +48,7 @@ class Customer {
 		return result;
 	}
 
+	@SuppressWarnings("rawtypes")
 	private int getTotalFrequentRenterPoints() {
 		int result = 0;
 		Enumeration rentals = _rentals.elements();
@@ -54,6 +59,7 @@ class Customer {
 		return result;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public String htmlStatement() {
 		Enumeration rentals = _rentals.elements();
 		String result = "<H1>Rentals for <EM>" + getName() + "</EM></H1><P>\n";
